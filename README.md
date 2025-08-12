@@ -79,7 +79,7 @@ CREATE TABLE netflix
 
 ## ⚙️ How to Run
 
-1️⃣ Import the CSV into PostgreSQL
+### 1️⃣ Import the CSV into PostgreSQL
 If you are using pgAdmin (remote or local PostgreSQL), you can either:
 
 Use the Import/Export Data tool, or
@@ -100,7 +100,7 @@ WITH (
 );
 
 ```
-2️⃣ Execute the Queries
+### 2️⃣ Execute the Queries
 Open Answers.sql in pgAdmin Query Tool or any PostgreSQL client.
 
 Run the CREATE TABLE statement.
@@ -130,4 +130,5 @@ WHERE casts ILIKE '%Salman Khan%'
   AND type = 'Movie' 
   AND release_year >= EXTRACT(YEAR FROM CURRENT_DATE) - 10;
 ```
+
 

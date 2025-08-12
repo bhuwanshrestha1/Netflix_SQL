@@ -1,5 +1,8 @@
 # 📺 Netflix Data Analysis with PostgreSQL
 
+<img width="2226" height="678" alt="image" src="https://github.com/user-attachments/assets/5d0d4235-ad0d-440d-8032-c60b4a967823" />
+
+
 ## 📌 Overview
 
 This project analyzes the **Netflix Titles Dataset** using **PostgreSQL** to answer **15 real-world business problems**.  
@@ -130,5 +133,6 @@ WHERE casts ILIKE '%Salman Khan%'
   AND type = 'Movie' 
   AND release_year >= EXTRACT(YEAR FROM CURRENT_DATE) - 10;
 ```
+
 
 

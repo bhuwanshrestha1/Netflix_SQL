@@ -76,3 +76,58 @@ CREATE TABLE netflix
 14. Find the top 10 actors who have appeared in the highest number of movies produced in India.
 
 15. Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field.
+
+## ⚙️ How to Run
+
+1️⃣ Import the CSV into PostgreSQL
+If you are using pgAdmin (remote or local PostgreSQL), you can either:
+
+Use the Import/Export Data tool, or
+
+Use the \COPY command:
+
+```sql
+\COPY public.netflix
+FROM '/path/to/netflix_titles.csv'
+WITH (
+    FORMAT csv,
+    HEADER true,
+    DELIMITER ',',
+    QUOTE '"',
+    ESCAPE '"',
+    NULL '',
+    ENCODING 'UTF8'
+);
+
+```
+2️⃣ Execute the Queries
+Open Answers.sql in pgAdmin Query Tool or any PostgreSQL client.
+
+Run the CREATE TABLE statement.
+
+Import the CSV.
+
+Execute queries for each of the 15 business problems.
+
+## 🛠 Requirements
+
+PostgreSQL 13 or later
+
+pgAdmin 4 (optional but recommended)
+
+Basic SQL knowledge
+
+## 📈 Example Query
+
+Find all Salman Khan movies in the last 10 years:
+
+```sql
+SELECT 
+    title,
+    release_year
+FROM netflix
+WHERE casts ILIKE '%Salman Khan%' 
+  AND type = 'Movie' 
+  AND release_year >= EXTRACT(YEAR FROM CURRENT_DATE) - 10;
+```
+
